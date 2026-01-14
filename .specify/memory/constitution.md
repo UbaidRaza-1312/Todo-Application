@@ -1,55 +1,40 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!-- SYNC IMPACT REPORT
+Version change: 1.0 → 2.0.0
+Modified principles: None (completely new constitution based on project requirements)
+Added sections: All sections (new constitution)
+Removed sections: None (this is a new constitution)
+Templates requiring updates: ✅ updated - .specify/templates/plan-template.md, .specify/templates/spec-template.md, .specify/templates/tasks-template.md
+Follow-up TODOs: None
+-->
+# Todo App Qwen Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### Accuracy
+Every technical and conceptual claim must be verifiable through primary sources. System behavior must match documented specifications exactly.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### Clarity
+Writing must target an academic computer science audience. Code, specs, and documentation must use precise, unambiguous language.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### Reproducibility
+Any result must be independently reproducible using: Specs, Prompts, Versioned configurations. No undocumented manual intervention is allowed.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### Rigor
+Claims must prioritize peer-reviewed literature. Engineering decisions must be justified by standards or research.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### Academic Integrity
+Zero-tolerance for plagiarism. All sources must be cited in APA style. AI-generated content must be reviewed, edited, verified, and properly referenced.
 
-### [PRINCIPLE_6_NAME]
+### Responsible AI Use
+AI tools (QWEN CLI, Spec-Kit Plus) are engineering collaborators, not authorities. All outputs require human validation, spec conformance, and security review.
 
+## Security Constitution
+Authentication Law: Every API request must include Authorization: Bearer <JWT>. Tokens must be signed with BETTER_AUTH_SECRET, time-limited, and verifiable by backend. Data Sovereignty: Users may only view, modify, delete their own tasks. Zero-Trust API: No endpoint is public. No implicit trust between frontend and backend. Identity is proven only by cryptographic verification.
 
-[PRINCIPLE__DESCRIPTION]
-
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
-
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+## Development Workflow
+All development must follow: Write Spec → Generate Plan → Break into Tasks → Implement via QWEN CLI. Manual coding is constitutionally prohibited. Toolchain: Specs (GitHub Spec-Kit Plus), Implementation (QWEN), Frontend (Next.js App Router), Backend (FastAPI), ORM (SQLModel), Database (Neon Serverless PostgreSQL), Auth (Better Auth + JWT).
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+All work must follow the governance model: Architecture (Spec documents), Implementation (QWEN CLI under spec control), Security (JWT + Better Auth policies), Data (Database schema specs), Research Claims (Peer-reviewed sources). Any change must follow: Spec update, Review, AI regeneration, Validation. No direct code edits outside the Agentic Dev Stack workflow.
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
-
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 2.0.0 | **Ratified**: 2026-01-11 | **Last Amended**: 2026-01-11

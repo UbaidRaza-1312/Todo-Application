@@ -105,6 +105,7 @@
 <!--
   ACTION REQUIRED: Define measurable success criteria.
   These must be technology-agnostic and measurable.
+  All claims must be verifiable through primary sources and meet academic integrity standards.
 -->
 
 ### Measurable Outcomes
@@ -113,3 +114,10 @@
 - **SC-002**: [Measurable metric, e.g., "System handles 1000 concurrent users without degradation"]
 - **SC-003**: [User satisfaction metric, e.g., "90% of users successfully complete primary task on first attempt"]
 - **SC-004**: [Business metric, e.g., "Reduce support tickets related to [X] by 50%"]
+
+### Academic Integrity Compliance
+
+- **AC-001**: All technical claims must be verifiable through primary sources
+- **AC-002**: All sources cited in APA style (7th edition)
+- **AC-003**: AI-generated content properly reviewed, edited, verified, and referenced
+- **AC-004**: Research integrity standards met with minimum 15 sources, at least 50% peer-reviewed
