@@ -6,7 +6,9 @@ import os
 from contextlib import asynccontextmanager
 
 # Get database URL from environment or use default
-DATABASE_URL = os.getenv("DATABASE_URL", "sqlite+aiosqlite:///./todo_app.db")
+# Using absolute path to ensure database persists across app restarts
+db_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "todo_app.db"))
+DATABASE_URL = os.getenv("DATABASE_URL", f"sqlite+aiosqlite:///{db_path}")
 
 # Create async engine
 # For SQLite, we need to handle the URL differently
@@ -16,7 +18,16 @@ else:
     # For SQLite, we need to ensure proper format and add query parameters for async operations
     if "sqlite+aiosqlite://" in DATABASE_URL:
         # Ensure proper SQLite URL format for aiosqlite
-        engine = create_async_engine(DATABASE_URL, echo=True)
+        # Adding query parameters for better durability with SQLite
+        engine = create_async_engine(
+            DATABASE_URL,
+            echo=True,
+            connect_args={
+                "check_same_thread": False,  # Required for async operations
+                "timeout": 20  # Increase timeout to ensure writes complete
+            },
+            pool_pre_ping=True  # Verify connections before use
+        )
     else:
         engine = create_async_engine(DATABASE_URL, echo=True)
 

@@ -22,7 +22,7 @@ export default function Navbar() {
     // Remove both localStorage and cookie tokens
     localStorage.removeItem('access_token');
     document.cookie = 'access_token=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-    window.location.href = '/auth/login';
+    window.location.href = '/';
   };
 
   return (
@@ -33,7 +33,9 @@ export default function Navbar() {
             <Link href="/" className="text-xl font-bold text-white">
               Todo App
             </Link>
-            <div className="ml-6 flex space-x-4">
+          </div>
+          <div className="flex items-center">
+            <div className="ml-4 flex space-x-4">
               {!checkedAuth ? (
                 // Placeholder to maintain layout during hydration
                 <div className="px-3 py-2 rounded-md text-sm font-medium text-gray-300">
@@ -67,17 +69,15 @@ export default function Navbar() {
                 </>
               )}
             </div>
-          </div>
-          {checkedAuth && isLoggedIn && (
-            <div className="flex items-center">
+            {checkedAuth && isLoggedIn && (
               <button
                 onClick={handleLogout}
-                className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-700/50 hover:text-white transition-colors"
+                className="ml-4 px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-700/50 hover:text-white transition-colors"
               >
                 Logout
               </button>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
     </nav>

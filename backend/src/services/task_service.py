@@ -108,7 +108,7 @@ class TaskService:
                 log_error(f"Task {task_id} not found for user {user_id} during deletion")
                 return False
 
-            self.session.delete(db_task)
+            await self.session.delete(db_task)
             # Don't commit here as the caller handles the transaction
             await self.session.flush()  # Ensure changes are applied without committing
             log_info(f"Task {task_id} deleted successfully for user {user_id}")

@@ -3,7 +3,6 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Layout from '../../../src/components/Layout';
 import AuthService from '../../../src/services/authService';
 
 const RegisterPage = () => {
@@ -48,25 +47,28 @@ const RegisterPage = () => {
   };
 
   return (
-    <Layout title="Register - Todo App">
-      <div className="flex items-center justify-center min-h-screen bg-gray-50 py-12">
-        <div className="max-w-md w-full space-y-8 p-8 bg-white rounded-lg shadow">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900 flex flex-col">
+      <div className="flex-grow flex items-center justify-center px-4 py-12">
+        <div className="max-w-md w-full space-y-8 p-8 bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl shadow-xl">
           <div>
-            <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+            <h2 className="mt-6 text-center text-3xl font-extrabold text-white">
               Create a new account
             </h2>
+            <p className="mt-2 text-center text-sm text-gray-400">
+              Join us today to start managing your tasks efficiently
+            </p>
           </div>
-          
+
           {error && (
-            <div className="rounded-md bg-red-50 p-4">
-              <div className="text-sm text-red-700">{error}</div>
+            <div className="rounded-md bg-red-500/20 p-4 border border-red-500/30">
+              <div className="text-sm text-red-300 text-center">{error}</div>
             </div>
           )}
-          
+
           <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
             <div className="rounded-md shadow-sm space-y-4">
               <div>
-                <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">
+                <label htmlFor="firstName" className="block text-sm font-medium text-gray-300 mb-1">
                   First Name
                 </label>
                 <input
@@ -75,13 +77,13 @@ const RegisterPage = () => {
                   type="text"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
-                  className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  className="appearance-none relative block w-full px-4 py-3 bg-gray-700/50 border border-gray-600 placeholder-gray-400 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm transition-colors"
                   placeholder="First name (optional)"
                 />
               </div>
 
               <div>
-                <label htmlFor="lastName" className="block text-sm font-medium text-gray-700">
+                <label htmlFor="lastName" className="block text-sm font-medium text-gray-300 mb-1">
                   Last Name
                 </label>
                 <input
@@ -90,13 +92,13 @@ const RegisterPage = () => {
                   type="text"
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
-                  className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  className="appearance-none relative block w-full px-4 py-3 bg-gray-700/50 border border-gray-600 placeholder-gray-400 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm transition-colors"
                   placeholder="Last name (optional)"
                 />
               </div>
-              
+
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
                   Email address
                 </label>
                 <input
@@ -107,13 +109,13 @@ const RegisterPage = () => {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  className="appearance-none relative block w-full px-4 py-3 bg-gray-700/50 border border-gray-600 placeholder-gray-400 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm transition-colors"
                   placeholder="Email address"
                 />
               </div>
-              
+
               <div>
-                <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+                <label htmlFor="password" className="block text-sm font-medium text-gray-300 mb-1">
                   Password
                 </label>
                 <input
@@ -124,7 +126,7 @@ const RegisterPage = () => {
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  className="appearance-none relative block w-full px-4 py-3 bg-gray-700/50 border border-gray-600 placeholder-gray-400 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm transition-colors"
                   placeholder="Password"
                 />
               </div>
@@ -134,22 +136,26 @@ const RegisterPage = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50"
+                className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 transition-colors shadow-lg shadow-indigo-500/20"
               >
                 {loading ? 'Creating account...' : 'Create account'}
               </button>
             </div>
           </form>
-          
-          <div className="text-center text-sm text-gray-600">
+
+          <div className="text-center text-sm text-gray-400">
             Already have an account?{' '}
-            <Link href="/auth/login" className="font-medium text-indigo-600 hover:text-indigo-500">
+            <Link href="/auth/login" className="font-medium text-indigo-400 hover:text-indigo-300 transition-colors">
               Sign in
             </Link>
           </div>
         </div>
       </div>
-    </Layout>
+
+      <footer className="py-6 text-center text-gray-400 bg-gray-800/80 backdrop-blur-md border-t border-gray-700/50">
+        <p>© {new Date().getFullYear()} Todo App. All rights reserved.</p>
+      </footer>
+    </div>
   );
 };
 
