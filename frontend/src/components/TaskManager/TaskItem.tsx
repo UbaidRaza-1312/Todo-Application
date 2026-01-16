@@ -23,7 +23,6 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, userId, onTaskUpdated, onTask
         title: title || task.title,
         description: description || task.description,
         completed: task.completed, // Preserve the completed status
-        priority: task.priority, // Send the priority value
         due_date: task.due_date, // Send the due date value
       });
       onTaskUpdated(updatedTask);
