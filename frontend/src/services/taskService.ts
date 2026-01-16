@@ -1,6 +1,6 @@
 // frontend/src/services/taskService.ts
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8000';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://ubaidraza1565-todo-app.hf.space';
 
 interface Task {
   id: string;
