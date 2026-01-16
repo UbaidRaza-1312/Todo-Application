@@ -10,13 +10,13 @@ interface Task {
   user_id: string;
   created_at: string;
   updated_at: string;
+  due_date?: string;
 }
 
 interface TaskCreateData {
   title: string;
   description?: string;
   completed?: boolean;
-  priority?: number;
   due_date?: string;
 }
 
@@ -24,7 +24,6 @@ interface TaskUpdateData {
   title?: string;
   description?: string;
   completed?: boolean;
-  priority?: number;
   due_date?: string;
 }
 
